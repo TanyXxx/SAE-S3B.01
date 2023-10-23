@@ -30,7 +30,6 @@
         .bandeau img {
             max-width: 60px;
             height: auto;
-            margin-right: 20px;
         }
 
         .bandeau h1 {
@@ -79,6 +78,22 @@
             height: auto;
         }
 
+        .ajouter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .ajouter img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .ajouter p {
+            margin-left: 10px;
+        }
+
         .nom {
             font-weight: bold;
         }
@@ -100,6 +115,7 @@
             justify-content: center;
             margin-top: 10px; 
         }
+
         #profil_apprenti {
             background-color: #72bb53;
             border-radius: 10px;
@@ -109,57 +125,74 @@
             cursor: pointer;
         }
 
+        .centered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
     <div class="bandeau">
-            <img src="C:\Users\Etudiant\Pictures\Screenshots\logo.png" alt="Votre Image">
-            <h1>Admin</h1>
-    </div>
-    <div class="conteneur">
-        <div class="titre">Sélection d'un profil d'apprenti</div>
-        <div class="profils" id="carousel">
-            <div class="profil">
-                <img src="icone_profil.png" alt="Profil 1">
-                <p class="nom">Nom 1</p>
-                <p class="prenom">Prénom 1</p>
-            </div>
-            <div class="profil">
-                <img src="icone_profil.png" alt="Profil 2">
-                <p class="nom">Nom 2</p>
-                <p class="prenom">Prénom 2</p>
-            </div>
-            <div class="profil">
-                <img src="icone_profil.png" alt="Profil 3">
-                <p class="nom">Nom 3</p>
-                <p class="prenom">Prénom 3</p>
-            </div>
-            <div class="profil">
-                <img src="icone_profil.png" alt="Profil 4">
-                <p class="nom">Nom 4</p>
-                <p class="prenom">Prénom 4</p>
-            </div>
-            <div class="profil">
-                <img src="icone_profil.png" alt="Profil 5">
-                <p class="nom">Nom 5</p>
-                <p class="prenom">Prénom 5</p>
-            </div>
-            <div class="profil">
-                <img src="icone_profil.png" alt="Profil 6">
-                <p class="nom">Nom 6</p>
-                <p class="prenom">Prénom 6</p>
-            </div>
+        <div class="bandeau centered">
+            <img src="logo.png" alt="Votre Image">
+            <h1 style="margin-left: 10px;">Admin</h1>
         </div>
-        
+        <a href="https://docs.google.com/document/d/1cM7t6f-XGID3lx3FNxVUTaXQoAhsjzOmj6h0Pt1NRiM/edit?usp=sharing">
+            <img src="aide.png" alt="aide" style="cursor: pointer; margin-left: auto;"> 
+        </a>
+    </div>
+    
+    <div class="conteneur">
+            <div class="profils" id="carousel">
+                <div class="profil">
+                    <img src="icone_profil.png" alt="Profil 1">
+                    <p class="nom">Nom 1</p>
+                    <p class="prenom">Prénom 1</p>
+                </div>
+                <div class="profil">
+                    <img src="icone_profil.png" alt="Profil 2">
+                    <p class="nom">Nom 2</p>
+                    <p class="prenom">Prénom 2</p>
+                </div>
+                <div class="profil">
+                    <img src="icone_profil.png" alt="Profil 3">
+                    <p class="nom">Nom 3</p>
+                    <p class="prenom">Prénom 3</p>
+                </div>
+                <div class="profil">
+                    <img src="icone_profil.png" alt="Profil 4">
+                    <p class="nom">Nom 4</p>
+                    <p class="prenom">Prénom 4</p>
+                </div>
+                <div class="profil">
+                    <img src="icone_profil.png" alt="Profil 5">
+                    <p class="nom">Nom 5</p>
+                    <p class="prenom">Prénom 5</p>
+                </div>
+                <div class="profil">
+                    <img src="icone_profil.png" alt="Profil 6">
+                    <p class="nom">Nom 6</p>
+                    <p class="prenom">Prénom 6</p>
+                </div>
+            </div>
+
         <div class="button-container">
             <button id="profil_apprenti" style="display: none;">Voir son profil</button>
         </div>
 
         <div class="navigation">
             <img class="fleche" id="prev" src="fleche_gauche.png" alt="Précédent" style="max-width: 30px; margin-right: 10px;">
-            <img class="fleche" id="next" src="fleche_droite.png" alt="Suivant" style="max-width: 30px; margin-left: 10px;">
-        </div>        
-                
+            <img class "fleche" id="next" src="fleche_droite.png" alt="Suivant" style="max-width: 30px; margin-left: 10px;">
+        </div>    
+    </div>
+    <!-- Ajout de l'image cliquable et du texte "Ajouter un apprenti" -->
+    <div class="ajouter">
+        <a href="lien_vers_autre_page.html">
+            <img src="logo_plus.png" alt="Ajouter un apprenti" style="cursor: pointer;">
+        </a>
+        <p>Ajouter un apprenti</p>
     </div>
     <script>
         const carousel = document.getElementById('carousel');
@@ -230,6 +263,5 @@
             }
         });
     </script>
-    
 </body>
 </html>
