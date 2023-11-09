@@ -21,6 +21,7 @@
                 <h4> Choisir une fiche d'intervention </h4>
                 <img class="image2" src="assignment_icon.png"> 
             </div>
+            
             <div class="fInters">
                 <div class="fInter">
                     <p class="name">Plomberie</p>
@@ -32,18 +33,49 @@
                     <p class="name">Serruerie</p>
                 </div>
                 <div class="fInter">
-                    <p class="name">Aménagement Intérieur</p>
+                    <div class="static">
+                        <p class="name">Aménagement</p>
+                    </div>
                 </div>
                 <div class="fInter">
                     <p class="name">Électricité</p>
                 </div>
             </div>
             <div class="buttonADD">
-                <button id="add"><img src="logo_plus.png"></button>
+                <a id="add"><img src="logo_plus.png" class="image"></a>
             </div>
         </div>
     </body>
-    <footer>
-        
-    </footer>
+    <script>
+        const addButton = document.getElementById('add');
+
+        let selectedPaper = null;
+
+        function selectPaper(paper) {
+            if (selectedPaper === paper) {
+                deselectPaper();
+            } else {
+                if (selectedPaper) {
+                    selectedPaper.classList.remove('selected');
+                }
+                paper.classList.add('selected');
+                selectedPaper = paper;
+                connectButton.style.display = 'block';
+            }
+        }
+
+        function deselectPaper() {
+            if (selectedPaper) {
+                selectedPaper.classList.remove('selected');
+                selectedPaper = null;
+                connectButton.style.display = 'none';
+            }
+        }
+
+        addButton.addEventListener('click', () => {
+            if (selectedPaper) {
+                //window.location.href = 'page_de_connexion.html';
+            }
+        });
+    </script>
 </html>

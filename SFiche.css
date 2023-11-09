@@ -61,22 +61,42 @@ body {
   }
 
   .fInters {
-    display: grid;
+    display: inline-block;
   }
     .fInter {
       display: inline-block;
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px;
+      width: 125px;
+      height: 175px;
     }
+
+    .fInter.static {
+      text-anchor: middle;
+    }
+    .fInter.selected {
+      border: 5px solid #72bb53;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+  }
       .name {
         font-weight: bolder;
       }
 
   .buttonADD {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     border: none;
     background-color: none;
     box-shadow: none;
 
   }
-    
+  #add {
+    background-color: none;
+    border-radius: 10px;
+    color: black; 
+    border: none; 
+    padding: 10px 20px;
+    cursor: pointer;
+}
 
