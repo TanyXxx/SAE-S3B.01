@@ -118,12 +118,57 @@
     </style>
 </head>
 <body>
+    <?php
+            try {
+                // Votre connexion PDO à la base de données
+                $server = 'localhost';
+                $db = 'carnet_adresses';
+                $login = "etu";
+                $mdp = "\$iutinfo";
+                
+                $linkpdo = new PDO("mysql:host=$server;dbname=$db", $login, $mdp);
+                $linkpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                // Requête SQL pour récupérer l'ID 1 de la table "apprenti"
+                $sql = "SELECT * FROM apprenti WHERE id = 1";
+                
+                // Exécution de la requête
+                $result = $linkpdo->query($sql);
+                
+                // Récupération du résultat
+                $row = $result->fetch(PDO::FETCH_ASSOC);
+                
+                if ($row) {
+                    // L'ID 1 de la table "apprenti" a été trouvé
+                    $id = $row['id'];
+                } else {
+                    // L'ID 1 de la table "apprenti" n'a pas été trouvé
+                    echo "L'ID 1 de la table 'apprenti' n'a pas été trouvé.";
+                }
+
+                 // Requête SQL pour récupérer le nom correspondant à l'ID 1 de la table "apprenti"
+                $id = 1; // ID que vous souhaitez récupérer
+                $sql = "SELECT nom, prenom FROM apprenti WHERE id = :id";
+                $stmt = $linkpdo->prepare($sql);
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+                $stmt->execute();
+    
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $nom = $row['nom'];
+                $prenom = $row['prenom'];
+            } catch (PDOException $e) {
+                echo "Erreur : " . $e->getMessage();
+            }
+            
+
+    ?>
+
     <div class="bandeau">
-        <a href="Accueil.html">
+        <a href="Accueil.php">
             <img src="accueil.png" alt="Accueil" style="float: left;">
         </a>
         <div class="bandeau centered">
-            <a class="logo-and-admin" href="Accueil Admin.html">
+            <a class="logo-and-admin" href="Accueil Admin.php">
                 <img src="logo.png" alt="Votre Image">
                 <h1>Admin</h1>
             </a>
@@ -136,8 +181,8 @@
         <div class="profils" id="carousel">
             <div class="profil">
                 <img src="icone_profil.png" alt="Profil 1">
-                <p class="nom">Nom 1 <img src="son.png" alt="Lire le nom" onclick="lireTexte('Nom 1')" style="width: 20px;"></p>
-                <p class="prenom">Prénom 1 <img src="son.png" alt="Lire le prénom" onclick="lireTexte('Prénom 1')" style="width: 20px;"></p>
+                <p class="nom"><?php echo $nom; ?><img src="son.png" alt="Lire le nom" onclick="lireTexte('<?php echo $nom; ?>')" style="width: 20px; margin: 5px"></p>
+                <p class="nom"><?php echo $prenom; ?><img src="son.png" alt="Lire le nom" onclick="lireTexte('<?php echo $prenom; ?>')" style="width: 20px; margin: 5px"></p>
             </div>
             <div class="profil">
                 <img src="icone_profil.png" alt="Profil 1">
@@ -241,7 +286,7 @@
 
         connectButton.addEventListener('click', () => {
             if (selectedProfile) {
-                window.location.href = 'page_de_connexion.html';
+                window.location.href = 'page_de_connexion.php';
             }
         });
 

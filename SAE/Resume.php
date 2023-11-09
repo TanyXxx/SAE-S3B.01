@@ -41,7 +41,7 @@
 </head>
 <body>
     <div class="bandeau">
-        <a href="Accueil.html">
+        <a href="Accueil.php">
             <img src="accueil.png" alt="Accueil" style="float: left;">
         </a>
         <div class="bandeau centered">

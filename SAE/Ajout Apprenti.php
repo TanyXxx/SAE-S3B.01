@@ -38,7 +38,6 @@
             margin: 0;
         }
 
-
         .apprenti-form {
             width: 300px;
             margin: 0 auto;
@@ -90,12 +89,11 @@
             cursor: pointer;
             margin-top: 10px;
         }
-
     </style>
 </head>
 <body>
     <div class="bandeau">
-        <a href="Accueil.html">
+        <a href="Accueil Admin.php">
             <img src="accueil.png" alt="Accueil" style="float: left;">
         </a>
         <div class="bandeau centered">
@@ -106,7 +104,7 @@
             <img src="aide.png" alt="aide" style="cursor: pointer; margin-left: auto;"> 
         </a>
     </div>
-    <form class="apprenti-form" enctype="multipart/form-data" method="GET" action="Resume.html">
+    <form class="apprenti-form" enctype="multipart/form-data" method="POST" action="AJapprenti.php">
         <label for="photo">Photo de profil :</label>
         <input type="file" id="photo" name="photo">
         <br>
@@ -115,23 +113,23 @@
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom">
         <br>
-        <label for="prenom">Prénom :</label>
+        <label for "prenom">Prénom :</label>
         <input type="text" id="prenom" name="prenom">
         <br>
-        <label for="date-naissance">Date de naissance :</label>
-        <input type="date" id="date-naissance" name="date-naissance">
+        <label for="date_naissance">Date de naissance :</label>
+        <input type="date" id="date_naissance" name="date_naissance">
         <br>
-        <label for="mot-de-passe">Mot de passe :</label>
-        <input type="password" id="mot-de-passe" name="mot-de-passe">
+        <label for="mot_de_passe">Mot de passe :</label>
+        <input type="password" id="mot_de_passe" name="mot_de_passe">
         <br>
-        <label for="confirmer-mot-de-passe">Confirmer le mot de passe :</label>
-        <input type="password" id="confirmer-mot-de-passe" name="confirmer-mot-de-passe">
+        <label for="confirmer_mot_de_passe">Confirmer le mot de passe :</label>
+        <input type="password" id="confirmer_mot_de_passe" name="confirmer_mot_de_passe">
         <br>
-        <label for="description-profil">Description du profil de l'apprenti (difficultés etc...) :</label>
-        <textarea id="description-profil" name="description-profil" rows="4" cols="50"></textarea>
+        <label for="description_profil">Description du profil de l'apprenti (difficultés etc...) :</label>
+        <textarea id="description_profil" name="description_profil" rows="4" cols="50"></textarea>
         <br>
-        <label for="niveau-moyen">Niveau moyen de ses fiches d'intervention :</label>
-        <select id="niveau-moyen" name="niveau-moyen">
+        <label for="niveau_moyen">Niveau moyen de ses fiches d'intervention :</label>
+        <select id="niveau_moyen" name="niveau_moyen">
             <option value="1">Niveau 1</option>
             <option value="2">Niveau 2</option>
             <option value="3">Niveau 3</option>
@@ -139,30 +137,13 @@
         <br>
 
         <input type="submit" value="Créer le profil">
-        <input type="button" class="annuler-button" value="Annuler" onclick="window.location.href='Accueil Admin.html'">
+        <input type="button" class="annuler-button" value="Annuler" onclick="window.location.href='Accueil Admin.php'">
     </form>
 
     <div id="error-message" style="color: red;"></div>
 
+
     <script>
-        function validateForm() {
-            const nom = document.getElementById('nom').value;
-            const prenom = document.getElementById('prenom').value;
-            const dateNaissance = document.getElementById('date-naissance').value;
-            const motDePasse = document.getElementById('mot-de-passe').value;
-            const confirmMotDePasse = document.getElementById('confirmer-mot-de-passe').value;
-
-            if (!nom || !prenom || !dateNaissance || !motDePasse || !confirmMotDePasse) {
-                document.getElementById('error-message').textContent = "Tous les champs sont obligatoires.";
-                return false;
-            } else if (motDePasse !== confirmMotDePasse) {
-                document.getElementById('error-message').textContent = "Les mots de passe ne correspondent pas.";
-                return false;
-            }
-
-            return true;
-        }
-
         const photoInput = document.getElementById('photo');
         const preview = document.getElementById('preview');
 

@@ -136,7 +136,7 @@
 </head>
 <body>
     <div class="bandeau">
-        <a href="Accueil.html">
+        <a href="Accueil.php">
             <img src="accueil.png" alt="Accueil" style="float: left;">
         </a>
         <div class="bandeau centered">
@@ -168,7 +168,7 @@
                 <div class="profil">
                     <img src="icone_profil.png" alt="Profil 4">
                     <p class="nom">Nom 4</p>
-                    <p class="prenom">Prénom 4</p>
+                    <p class="prenom">Prénom 4</p> 
                 </div>
                 <div class="profil">
                     <img src="icone_profil.png" alt="Profil 5">
@@ -193,7 +193,7 @@
     </div>
     <!-- Ajout de l'image cliquable et du texte "Ajouter un apprenti" -->
     <div class="ajouter">
-        <a href="Ajout Apprenti.html">
+        <a href="Ajout Apprenti.php">
             <img src="logo_plus.png" alt="Ajouter un apprenti" style="cursor: pointer;">
         </a>
         <p>Ajouter un apprenti</p>
@@ -263,7 +263,7 @@
 
         connectButton.addEventListener('click', () => {
             if (selectedProfile) {
-                window.location.href = 'profil_apprenti.html';
+                window.location.href = 'profil_apprenti.php';
             }
         });
     </script>
