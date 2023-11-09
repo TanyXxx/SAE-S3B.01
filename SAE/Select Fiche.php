@@ -28,8 +28,8 @@
                 border-bottom: 1px solid black;
             }
                 .image {
-                    width: 100px;
-                    height: 100px;
+                    width: 80px;
+                    height: 80px;
                 }
                 .image1 {
                     width: 62px;
@@ -111,10 +111,10 @@
     </head>
     <body>
         <div class="top-bar">
-            <a href="Accueil.html">
-                <img class="image" src="home-icon.png">
+            <a href="Accueil.php">
+                <img class="image" src="accueil.png">
             </a>
-            <a class="adm" href="Connexion_admin.html"> 
+            <a class="adm" href="Connexion_admin.php"> 
                 <img class="image1" src="logo.png">
                 <h3 class="admTXT">Admin</h3>
             </a> 
